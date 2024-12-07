@@ -37,15 +37,6 @@ class PhoneInvalid extends AuthCubitState {
   List<Object?> get props => [errorMessage];
 }
 
-class ExperienceLevelSelected extends AuthCubitState {
-  final String selectedLevel;
-
-  const ExperienceLevelSelected(this.selectedLevel);
-
-  @override
-  List<Object> get props => [selectedLevel];
-}
-
 class RegisterLoadingState extends AuthCubitState {}
 
 class RegisterSuccessState extends AuthCubitState {

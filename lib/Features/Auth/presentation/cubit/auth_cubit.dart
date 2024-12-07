@@ -34,7 +34,6 @@ class AuthCubitCubit extends Cubit<AuthCubitState> {
   final registerNameController = TextEditingController();
   final registerPasswordController = TextEditingController();
   final registerPhoneController = TextEditingController();
-  final registerExperienceController = TextEditingController();
   final registerAddressController = TextEditingController();
   final loginPhoneController = TextEditingController();
   final loginPasswordController = TextEditingController();
@@ -56,11 +55,7 @@ class AuthCubitCubit extends Cubit<AuthCubitState> {
     }
   }
 
-  String? levelSelected;
-  void selectExperienceLevel(String level) {
-    levelSelected = level;
-    emit(ExperienceLevelSelected(level));
-  }
+  String levelSelected = 'senior';
 
   Future<void> registerUser() async {
     emit(RegisterLoadingState());
@@ -69,7 +64,7 @@ class AuthCubitCubit extends Cubit<AuthCubitState> {
       phone: registerPhoneController.text,
       password: registerPasswordController.text,
       address: registerAddressController.text,
-      yearsOfExperience: int.tryParse(registerExperienceController.text),
+      yearsOfExperience: 2,
       experienceLevel: levelSelected,
     );
     response.fold((error) {

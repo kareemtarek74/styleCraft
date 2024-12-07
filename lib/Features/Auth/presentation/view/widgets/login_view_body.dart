@@ -90,9 +90,9 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                               });
                             }
                           },
-                          text: 'Sign In',
+                          text: 'Login',
                           style: Styles.styleSemiBold16(context)
-                              .copyWith(color: Colors.white, fontSize: 22),
+                              .copyWith(color: Colors.white, fontSize: 18),
                         ),
                         const SizedBox(
                           height: 24,
