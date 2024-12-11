@@ -8,6 +8,7 @@ import '../../../Domain/Entities/buttom_navigation_bar_entity.dart';
 class CustomBottomNavigationBar extends StatefulWidget {
   const CustomBottomNavigationBar({super.key, required this.onItemTapped});
   final ValueChanged<int> onItemTapped;
+
   @override
   State<CustomBottomNavigationBar> createState() =>
       _CustomBottomNavigationBarState();
@@ -15,6 +16,7 @@ class CustomBottomNavigationBar extends StatefulWidget {
 
 class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   int selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ThemeCubit, ThemeMode>(
@@ -53,9 +55,20 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                       widget.onItemTapped(index);
                     });
                   },
-                  child: NaivgationBarItem(
-                    isSelected: selectedIndex == index,
-                    bottomNavigationBarEntity: entity,
+                  child: AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 150),
+                    transitionBuilder: (child, animation) {
+                      return ScaleTransition(
+                        scale: animation,
+                        child: child,
+                      );
+                    },
+                    child: NaivgationBarItem(
+                      key: ValueKey(index ==
+                          selectedIndex), // Ensure unique key for animation
+                      isSelected: selectedIndex == index,
+                      bottomNavigationBarEntity: entity,
+                    ),
                   ),
                 ),
               );

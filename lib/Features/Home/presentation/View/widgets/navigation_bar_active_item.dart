@@ -29,7 +29,7 @@ class ActiveItem extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Container(
-                  width: 30,
+                  width: 26,
                   height: 30,
                   decoration: ShapeDecoration(
                     color: AppColors.primaryColor,

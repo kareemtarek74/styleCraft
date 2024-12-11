@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:style_craft/Features/Auth/presentation/cubit/auth_cubit.dart';
-import 'package:style_craft/Features/Auth/presentation/view/on_boarding_view.dart';
+import 'package:style_craft/Features/Home/presentation/View/main_view.dart';
 import 'package:style_craft/Features/Home/presentation/cubits/theme_cubit.dart';
 import 'package:style_craft/core/functions/on_generate_function.dart';
 import 'package:style_craft/core/services/get_it_service.dart';
@@ -33,7 +33,7 @@ class StyleCraftApp extends StatelessWidget {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             onGenerateRoute: onGenerateRoute,
-            initialRoute: OnBoardingView.routeName,
+            initialRoute: MainView.routeName,
             theme: AppThemes.lightTheme,
             darkTheme: AppThemes.darkTheme,
             themeMode: themeMode,
