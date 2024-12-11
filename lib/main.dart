@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:style_craft/Features/Auth/presentation/cubit/auth_cubit.dart';
 import 'package:style_craft/Features/Auth/presentation/view/on_boarding_view.dart';
+import 'package:style_craft/Features/Home/presentation/cubits/theme_cubit.dart';
 import 'package:style_craft/core/functions/on_generate_function.dart';
 import 'package:style_craft/core/services/get_it_service.dart';
+import 'package:style_craft/core/utils/theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,11 +24,21 @@ class StyleCraftApp extends StatelessWidget {
         BlocProvider(
           create: (context) => getIt<AuthCubitCubit>(),
         ),
+        BlocProvider(
+          create: (context) => ThemeCubit(),
+        ),
       ],
-      child: const MaterialApp(
-        debugShowCheckedModeBanner: false,
-        onGenerateRoute: onGenerateRoute,
-        initialRoute: OnBoardingView.routeName,
+      child: BlocBuilder<ThemeCubit, ThemeMode>(
+        builder: (context, themeMode) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            onGenerateRoute: onGenerateRoute,
+            initialRoute: OnBoardingView.routeName,
+            theme: AppThemes.lightTheme,
+            darkTheme: AppThemes.darkTheme,
+            themeMode: themeMode,
+          );
+        },
       ),
     );
   }
