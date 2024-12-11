@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
-import 'package:style_craft/utils/text_styles.dart';
+
+import '../utils/text_styles.dart';
 
 class CustomPhoneField extends StatelessWidget {
   final String initialCountryCode;

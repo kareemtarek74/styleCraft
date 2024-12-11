@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:style_craft/Features/Auth/presentation/cubit/auth_cubit.dart';
 import 'package:style_craft/Features/Auth/presentation/view/widgets/dont_have_account.dart';
+import 'package:style_craft/core/utils/text_styles.dart';
 import 'package:style_craft/core/widgets/custom_button.dart';
 import 'package:style_craft/core/widgets/custom_password_field.dart';
 import 'package:style_craft/core/widgets/custom_phone_field.dart';
 
 import '../../../../../core/utils/app_images.dart';
-import '../../../../../utils/text_styles.dart';
 
 class LoginViewBody extends StatefulWidget {
   const LoginViewBody({super.key});

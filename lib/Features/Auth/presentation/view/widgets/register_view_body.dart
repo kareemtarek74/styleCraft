@@ -6,9 +6,9 @@ import 'package:style_craft/core/utils/app_images.dart';
 import 'package:style_craft/core/widgets/custom_button.dart';
 import 'package:style_craft/core/widgets/custom_phone_field.dart';
 
+import '../../../../../core/utils/text_styles.dart';
 import '../../../../../core/widgets/custom_password_field.dart';
 import '../../../../../core/widgets/custom_text_form_field.dart';
-import '../../../../../utils/text_styles.dart';
 
 class RegisterViewBody extends StatefulWidget {
   const RegisterViewBody({super.key});
@@ -52,7 +52,6 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       const SizedBox(height: 240),
-
                       Text(
                         'Register',
                         style: Styles.styleExtraBold32(context),
@@ -65,26 +64,22 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                         keyboardType: TextInputType.name,
                       ),
                       const SizedBox(height: 16),
-
                       CustomPhoneField(
                         controller: BlocProvider.of<AuthCubitCubit>(context)
                             .registerPhoneController,
                       ),
                       const SizedBox(height: 16),
-
                       CustomTextFormField(
                         controller: BlocProvider.of<AuthCubitCubit>(context)
                             .registerAddressController,
                         hintText: 'Address...',
                       ),
                       const SizedBox(height: 16),
-
                       CustomPasswordField(
                         controller: BlocProvider.of<AuthCubitCubit>(context)
                             .registerPasswordController,
                       ),
                       const SizedBox(height: 24),
-
                       CustomButton(
                         hight: 60,
                         backgroundColor: Colors.black,
@@ -105,8 +100,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                           }
                         },
                       ),
-                      const SizedBox(height: 24), // Space below the button
-
+                      const SizedBox(height: 24),
                       const AlreadyHaveAccount(),
                     ],
                   ),

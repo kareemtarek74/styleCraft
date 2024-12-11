@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:style_craft/Features/Auth/presentation/view/register_view.dart';
 
-import '../../../../../utils/text_styles.dart';
+import '../../../../../core/utils/text_styles.dart';
 
 class DidntHaveAccount extends StatelessWidget {
   const DidntHaveAccount({super.key});

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:style_craft/Features/Auth/presentation/view/login_view.dart';
 import 'package:style_craft/core/utils/app_images.dart';
 import 'package:style_craft/core/widgets/custom_button.dart';
-import 'package:style_craft/utils/text_styles.dart';
+
+import '../../../../../core/utils/text_styles.dart';
 
 class OnBoardingViewBody extends StatelessWidget {
   const OnBoardingViewBody({super.key});

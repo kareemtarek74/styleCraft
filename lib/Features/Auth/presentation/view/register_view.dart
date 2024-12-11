@@ -5,7 +5,10 @@ import 'package:style_craft/Features/Auth/presentation/cubit/auth_cubit.dart';
 import 'package:style_craft/Features/Auth/presentation/cubit/auth_state.dart';
 import 'package:style_craft/Features/Auth/presentation/view/login_view.dart';
 import 'package:style_craft/Features/Auth/presentation/view/widgets/register_view_body.dart';
+import 'package:style_craft/core/widgets/custom_error_snack_bar.dart';
 import 'package:style_craft/core/widgets/custom_success_snack_bar.dart';
+
+import '../../../../core/widgets/custom_progress_indicator.dart';
 
 class RegisterView extends StatelessWidget {
   const RegisterView({super.key});
@@ -23,11 +26,20 @@ class RegisterView extends StatelessWidget {
           );
           Navigator.pushReplacementNamed(context, LoginView.routeName);
         }
-        if (state is RegisterErrorState) {}
+        if (state is RegisterErrorState) {
+          CustomErrorSnackbar.showError(
+            context: context,
+            message: state.errorMessage.toString(),
+            actionLabel: 'Retry',
+            onAction: () =>
+                BlocProvider.of<AuthCubitCubit>(context).registerUser(),
+          );
+        }
       },
       builder: (context, state) {
         return ModalProgressHUD(
             inAsyncCall: state is RegisterLoadingState ? true : false,
+            progressIndicator: const CustomProgressIndicator(),
             child: const RegisterViewBody());
       },
     );

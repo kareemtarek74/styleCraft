@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:style_craft/Features/Auth/presentation/view/login_view.dart';
-import 'package:style_craft/utils/text_styles.dart';
+
+import '../../../../../core/utils/text_styles.dart';
 
 class AlreadyHaveAccount extends StatelessWidget {
   const AlreadyHaveAccount({super.key});
